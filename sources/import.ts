@@ -1,7 +1,7 @@
-import { AuthRESTDataSource } from 'inuits-apollo-server-auth';
-import { environment as env } from '../../../environment';
-import { extractParentDirectory } from '../parsers/directories';
-import { ImportReturn, Directory } from '../../../generated-types/type-defs';
+import { AuthRESTDataSource } from "inuits-apollo-server-auth";
+import { environment as env } from "base-graphql";
+import { extractParentDirectory } from "../parsers/directories";
+import { ImportReturn, Directory } from "../../../generated-types/type-defs";
 
 export class ImportAPI extends AuthRESTDataSource {
   public baseURL = `${env.api.csvImportServiceUrl}/`;

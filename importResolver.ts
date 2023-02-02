@@ -1,10 +1,10 @@
-import { Resolvers } from '../../generated-types/type-defs';
-import { ContextValue } from '../../types';
+import { Resolvers } from "../../generated-types/type-defs";
+import { ContextValue } from "base-graphql";
 
 export const importResolver: Resolvers<ContextValue> = {
   Query: {
     Directories: async (_source, { dir }, { dataSources }) => {
-      return dataSources.ImportAPI.getDirectories(dir || '');
+      return dataSources.ImportAPI.getDirectories(dir || "");
     },
   },
   Mutation: {
