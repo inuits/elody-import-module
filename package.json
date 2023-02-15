@@ -1,13 +1,17 @@
 {
   "name": "import-module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main":"./importModule.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "graphql-modules": "^2.1.0",
     "base-graphql": "^0.0.1"
   },
   "publishConfig": {
+    "main": "./dist/modules/importModule/importModule.js",
     "registry": "https://nexus.inuits.io/repository/npm-private"
   }
 }
