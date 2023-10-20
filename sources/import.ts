@@ -1,5 +1,4 @@
-import { AuthRESTDataSource } from "inuits-apollo-server-auth";
-import { environment as env } from "base-graphql";
+import { environment as env, AuthRESTDataSource } from "base-graphql";
 import { extractParentDirectory } from "../parsers/directories";
 import { ImportReturn, Directory } from "../../../generated-types/type-defs";
 
