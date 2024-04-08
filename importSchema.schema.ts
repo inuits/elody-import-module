@@ -16,7 +16,7 @@ export const importSchema = gql`
   type Query {
     Directories(dir: String): [Directory]
   }
-
+  
   type Mutation {
     postStartImport(folder: String!): ImportReturn
   }
