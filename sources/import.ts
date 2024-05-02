@@ -26,6 +26,6 @@ export class ImportAPI extends AuthRESTDataSource {
         const applicationTitle = env?.customization?.applicationTitle || '';
         return applicationTitle.includes('CoGhent') ?
             `${env?.api.csvImportServiceUrl}/` :
-            `${env?.api.fileSystemImporterServiceUrl}` || '';
+            `${env?.api.fileSystemImporterServiceUrl}/` || '';
     }
 }
