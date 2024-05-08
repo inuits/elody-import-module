@@ -14,7 +14,7 @@ export class ImportAPI extends AuthRESTDataSource {
         const baseURL = this.determineBaseURL();
         const data = await this.post(`${baseURL}importer/start`, {
             body: {
-                selected_folder: folder,
+                "selected-folder": folder,
             },
         });
 
