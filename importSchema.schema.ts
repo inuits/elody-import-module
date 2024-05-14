@@ -10,7 +10,9 @@ export const importSchema = gql`
   }
 
   type ImportReturn {
+    status: Int
     message_id: String
+    count: Int
   }
 
   type Query {

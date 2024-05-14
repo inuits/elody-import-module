@@ -1,31 +1,25 @@
-import {AuthRESTDataSource, environment as env} from "base-graphql";
-import {extractParentDirectory} from "../parsers/directories";
-import {Directory, ImportReturn} from "../../../generated-types/type-defs";
+import { environment as env, AuthRESTDataSource } from "base-graphql";
+import { extractParentDirectory } from "../parsers/directories";
+import { ImportReturn, Directory } from "../../../generated-types/type-defs";
 
 export class ImportAPI extends AuthRESTDataSource {
+    public baseURL = `${env?.api.fileSystemImporterServiceUrl}/`;
 
     async getDirectories(dir: string): Promise<Directory[]> {
-        const baseURL = this.determineBaseURL();
-        const data = await this.get(`${baseURL}importer/directories?dir=${dir}`);
+        let data: Directory[] = [];
+
+        data = await this.get(`importer/directories?dir=${dir}`);
+
         return extractParentDirectory(data);
     }
 
     async startImport(folder: string): Promise<ImportReturn> {
-        const baseURL = this.determineBaseURL();
-        const data = await this.post(`${baseURL}importer/start`, {
+        const data = await this.post(`importer/start`, {
             body: {
                 "selected-folder": folder,
             },
         });
 
         return data;
-    }
-
-    private determineBaseURL(): string {
-
-        const applicationTitle = env?.customization?.applicationTitle || '';
-        return applicationTitle.includes('CoGhent') ?
-            `${env?.api.csvImportServiceUrl}/` :
-            `${env?.api.fileSystemImporterServiceUrl}/` || '';
     }
 }
