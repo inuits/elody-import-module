@@ -3,23 +3,20 @@ import { extractParentDirectory } from "../parsers/directories";
 import { ImportReturn, Directory } from "../../../generated-types/type-defs";
 
 export class ImportAPI extends AuthRESTDataSource {
-    public baseURL = `${env?.api.fileSystemImporterServiceUrl}/`;
+  public baseURL = `${env?.api.fileSystemImporterServiceUrl}/`;
 
-    async getDirectories(dir: string): Promise<Directory[]> {
-        let data: Directory[] = [];
+  async getDirectories(dir: string): Promise<Directory[]> {
+    const directories = await this.get(`importer/directories?dir=${dir}`);
+    if (!Array.isArray(directories)) return [];
 
-        data = await this.get(`importer/directories?dir=${dir}`);
+    return extractParentDirectory(directories as Directory[]);
+  }
 
-        return extractParentDirectory(data);
-    }
-
-    async startImport(folder: string): Promise<ImportReturn> {
-        const data = await this.post(`importer/start`, {
-            body: {
-                "selected-folder": folder,
-            },
-        });
-
-        return data;
-    }
+  async startImport(folder: string): Promise<ImportReturn> {
+    return await this.post(`importer/start`, {
+      body: {
+        "selected-folder": folder,
+      },
+    });
+  }
 }
