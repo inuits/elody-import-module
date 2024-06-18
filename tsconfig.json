@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -10,12 +11,14 @@
     "removeComments": true,
     "rootDir": "../../",
     "target": "es6",
+    "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
       "*": ["src/*"],
       "graphql": ["node_modules/graphql"]
     }
   },
-  "include": ["./**/*.ts"],
-  "files": ["../../generated-types/type-defs.ts"]
+  "exclude": ["node_modules", "./test/**/*.test.ts"],
+  "include": ["./**/*.ts", "./**/*.json"],
+  "files": ["../../generated-types/type-defs.ts"],
 }
