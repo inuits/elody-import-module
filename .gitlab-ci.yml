@@ -9,5 +9,6 @@ include:
     ref: 'v3.0.2'
 
 variables:
-  GRAPHQL_IMAGE: 'digipolis/dams-graphql'
+  GRAPHQL_IMAGE: 'vliz/elody-dams-graphql'
+  MOVE_SCHEMA: 'importSchema.schema.ts'
 
