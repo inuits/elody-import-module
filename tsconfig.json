@@ -15,8 +15,7 @@
     "baseUrl": "./",
     "paths": {
       "*": ["src/*"],
-      "graphql": ["node_modules/graphql"],
-      "base-graphql": ["node_modules/base-graphql"]
+      "graphql": ["node_modules/graphql"]
     }
   },
   "exclude": ["node_modules", "./test/**/*.test.ts"],
