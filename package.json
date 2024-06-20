@@ -19,7 +19,8 @@
     "@graphql-codegen/typescript-resolvers": "^2.7.13",
     "graphql": "^16.6.0",
     "base-graphql": "*",
-    "json-merger": "^1.1.10"
+    "json-merger": "^1.1.10",
+    "inuits-apollo-server-auth": "*"
   },
   "publishConfig": {
     "main": "./dist/dams/inuits-dams-import-module/importModule.js",
