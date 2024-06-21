@@ -6,7 +6,6 @@ export class ImportAPI extends AuthRESTDataSource {
   public baseURL = `${env?.api.fileSystemImporterServiceUrl}/`;
 
   async getDirectories(dir: string): Promise<Directory[]> {
-    //@ts-ignore
     const directories = await this.get(`importer/directories?dir=${dir}`);
     if (!Array.isArray(directories)) return [];
 
@@ -14,7 +13,6 @@ export class ImportAPI extends AuthRESTDataSource {
   }
 
   async startImport(folder: string): Promise<ImportReturn> {
-    //@ts-ignore
     return await this.post(`importer/start`, {
       body: {
         "selected-folder": folder,
