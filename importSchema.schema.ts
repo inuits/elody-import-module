@@ -17,9 +17,15 @@ export const importSchema = gql`
 
   type Query {
     Directories(dir: String): [Directory]
+    UploadMagazinesWithMets: [String]
+    UploadMagazinesWithCsv: [String]
+    UploadOcr: [String]
   }
 
   type Mutation {
     postStartImport(folder: String!): ImportReturn
+    startUploadMagazinesWithMets(magazine: String!): [String]
+    startUploadMagazinesWithCsv(magazine: String!): [String]
+    startUploadOcr(ocrFile: String!): [String]
   }
 `;
