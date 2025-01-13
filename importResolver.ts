@@ -12,9 +12,6 @@ export const importResolver: Resolvers<ContextValue> = {
     UploadMagazinesWithCsv: async (_source, { }, { dataSources }) => {
       return dataSources.ImportAPI.getMagazinesWithCsv();
     },
-    UploadOcr: async (_source, { }, { dataSources }) => {
-      return dataSources.ImportAPI.getOcrFiles();
-    },
   },
   Mutation: {
     postStartImport: async (_source, { folder }, { dataSources }) => {
@@ -25,9 +22,6 @@ export const importResolver: Resolvers<ContextValue> = {
     },
     startUploadMagazinesWithCsv: async (_source, { magazine }, { dataSources }) => {
       return dataSources.ImportAPI.startUploadMagazinesWithCsv(magazine);
-    },
-    startUploadOcr: async (_source, { ocrFile }, { dataSources }) => {
-      return dataSources.ImportAPI.startUploadOcr(ocrFile);
     },
   },
 };
