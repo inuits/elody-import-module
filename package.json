@@ -1,6 +1,6 @@
 {
   "name": "import-module",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "license": "MIT",
   "main":"./importModule.ts",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "publishConfig": {
     "main": "./dist/dams/inuits-dams-import-module/importModule.js",
+    "types": "./types/dams/inuits-dams-import-module/main.d.ts",
     "registry": "https://nexus.inuits.io/repository/npm-private"
   }
 }
