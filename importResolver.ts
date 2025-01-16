@@ -4,23 +4,37 @@ import { ContextValue } from "base-graphql";
 export const importResolver: Resolvers<ContextValue> = {
   Query: {
     Directories: async (_source, { dir }, { dataSources }) => {
+      if (!dataSources.ImportAPI) return [];
       return dataSources.ImportAPI.getDirectories(dir || "");
     },
-    UploadMagazinesWithMets: async (_source, { }, { dataSources }) => {
+    UploadMagazinesWithMets: async (_source, {}, { dataSources }) => {
+      if (!dataSources.ImportAPI) return [];
       return dataSources.ImportAPI.getMagazinesWithMets();
     },
-    UploadMagazinesWithCsv: async (_source, { }, { dataSources }) => {
+    UploadMagazinesWithCsv: async (_source, {}, { dataSources }) => {
+      if (!dataSources.ImportAPI) return [];
       return dataSources.ImportAPI.getMagazinesWithCsv();
     },
   },
   Mutation: {
     postStartImport: async (_source, { folder }, { dataSources }) => {
+      if (!dataSources.ImportAPI) return {};
       return dataSources.ImportAPI.startImport(folder);
     },
-    startUploadMagazinesWithMets: async (_source, { magazine }, { dataSources }) => {
+    startUploadMagazinesWithMets: async (
+      _source,
+      { magazine },
+      { dataSources }
+    ) => {
+      if (!dataSources.ImportAPI) return [];
       return dataSources.ImportAPI.startUploadMagazinesWithMets(magazine);
     },
-    startUploadMagazinesWithCsv: async (_source, { magazine }, { dataSources }) => {
+    startUploadMagazinesWithCsv: async (
+      _source,
+      { magazine },
+      { dataSources }
+    ) => {
+      if (!dataSources.ImportAPI) return [];
       return dataSources.ImportAPI.startUploadMagazinesWithCsv(magazine);
     },
   },
