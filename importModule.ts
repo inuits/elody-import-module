@@ -2,6 +2,7 @@ import { createModule } from "graphql-modules";
 import { importSchema } from "./importSchema.schema";
 import { importResolver } from "./importResolver";
 import { ImportAPI } from "./sources/import";
+import { extractParentDirectory } from "./parsers/directories";
 
 const importModule = createModule({
   id: "importModule",
@@ -10,4 +11,4 @@ const importModule = createModule({
   resolvers: [importResolver],
 });
 
-export { importModule, importResolver, importSchema, ImportAPI };
+export { importModule, importResolver, importSchema, ImportAPI, extractParentDirectory };
