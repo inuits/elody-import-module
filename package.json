@@ -1,8 +1,8 @@
 {
   "name": "import-module",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "license": "MIT",
-  "main":"./importModule.ts",
+  "main": "./importModule.ts",
   "scripts": {
     "build": "tsc"
   },
