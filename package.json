@@ -23,7 +23,7 @@
   },
   "publishConfig": {
     "main": "./dist/dams/inuits-dams-import-module/importModule.js",
-    "types": "./types/dams/inuits-dams-import-module/main.d.ts",
+    "types": "./types/dams/inuits-dams-import-module/importModule.d.ts",
     "registry": "https://nexus.inuits.io/repository/npm-private"
   }
 }
