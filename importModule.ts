@@ -4,6 +4,12 @@ import { importResolver } from "./importResolver";
 import { ImportAPI } from "./sources/import";
 import { extractParentDirectory } from "./parsers/directories";
 
+declare module "base-graphql" { // Use the actual package name here
+  interface DataSources {
+    ImportAPI: ImportAPI;
+  }
+}
+
 const importModule = createModule({
   id: "importModule",
   dirname: __dirname,
