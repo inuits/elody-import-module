@@ -13,6 +13,7 @@ export const importSchema = gql`
     status: Int
     message_id: String
     count: Int
+    job_id: String
   }
 
   type Query {
