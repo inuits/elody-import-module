@@ -1,4 +1,4 @@
-import { Directory } from "../../../generated-types/type-defs";
+import { Directory } from "@/types";
 
 export const extractParentDirectory = (input: Directory[]): Directory[] => {
   const finalData: Directory[] = [];

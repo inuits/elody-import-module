@@ -1,4 +1,4 @@
-import { Resolvers } from "../../generated-types/type-defs";
+import { Resolvers } from "@/types";
 import { ContextValue } from "base-graphql";
 
 export const importResolver: Resolvers<ContextValue> = {

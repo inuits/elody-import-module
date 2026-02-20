@@ -1,6 +1,6 @@
 import { AuthRESTDataSource } from "base-graphql";
 import { extractParentDirectory } from "../parsers/directories";
-import { ImportReturn, Directory } from "../../../generated-types/type-defs";
+import { ImportReturn, Directory } from "@/types";
 
 export class ImportAPI extends AuthRESTDataSource {
   public baseURL = `${this.environment.api.fileSystemImporterServiceUrl}/`;
