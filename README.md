@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://elody.eu"><img src="https://elody.eu/images/logo.svg" alt="Elody" width="96" /></a>
+</p>
+
+<p align="center">Part of <a href="https://elody.eu">Elody</a> — the open semantic data platform.</p>
+
 # Import Module
 
 A `graphql-modules` module that lets the frontend browse the importer service's filesystem and trigger imports. It ships a small GraphQL schema, one data source, and no Express endpoints — everything goes through GraphQL.
