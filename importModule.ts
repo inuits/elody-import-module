@@ -18,7 +18,12 @@ const importModule = Object.assign(
     resolvers: [importResolver],
   }),
   {
-    elodyRequirements: { dataSources: ["ImportAPI"] },
+    elodyDataSources: { ImportAPI },
+    elodyRequirements: {
+      environment: {
+        "api.fileSystemImporterServiceUrl": "FILE_SYSTEM_IMPORTER_URL",
+      },
+    },
   }
 );
 
