@@ -10,11 +10,16 @@ declare module "base-graphql" { // Use the actual package name here
   }
 }
 
-const importModule = createModule({
-  id: "importModule",
-  dirname: __dirname,
-  typeDefs: [importSchema],
-  resolvers: [importResolver],
-});
+const importModule = Object.assign(
+  createModule({
+    id: "importModule",
+    dirname: __dirname,
+    typeDefs: [importSchema],
+    resolvers: [importResolver],
+  }),
+  {
+    elodyRequirements: { dataSources: ["ImportAPI"] },
+  }
+);
 
 export { importModule, importResolver, importSchema, ImportAPI, extractParentDirectory };
